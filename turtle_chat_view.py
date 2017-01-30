@@ -1,5 +1,5 @@
 #2016-2017 PERSONAL PROJECTS: TurtleChat!
-#WRITE YOUR NAME HERE!
+#WRITE YOUR NAME HERE! Nicole
 
 #####################################################################################
 #                                   IMPORTS                                         #
@@ -9,7 +9,9 @@
 #Finally, from the turtle_chat_widgets module, import two classes: Button and TextInput
 #####################################################################################
 #####################################################################################
-
+import turtle
+from turtle_chat_client import Client
+from turtle_chat_widgets import Button, TextInput
 #####################################################################################
 #                                   TextBox                                         #
 #####################################################################################
@@ -17,6 +19,23 @@
 #Because TextInput is an abstract class, you must implement its abstract
 #methods.  There are two:
 #
+class TextBox(TextInput):
+    def draw_box(self):
+        box_turtle=turtle.clone()
+        box_turtle.pendown()
+        box_turtle.goto(self.width,0)
+        box_turtle.goto(self.width,self.height)
+        box_turtle.goto(0,self.height)
+        box_turtle.goto(0,0)
+    def write_msg(self):
+        box_turtle=turtle.clone()
+        box_turtle.penup()
+        box_turtle.goto(self.width/4,self.height/2)
+        box_turtle.pendown()
+        box_turtle.write("Heyy")
+      #  box_turtle.goto
+t1=TextBox()
+
 #draw_box
 #write_msg
 #
@@ -73,6 +92,11 @@ class View:
     _LINE_SPACING=round(_SCREEN_HEIGHT/2/(_MSG_LOG_LENGTH+1))
 
     def __init__(self,username='Me',partner_name='Partner'):
+        self.username=username
+        self.partner_name=partner_name
+        self.my_client=Client(
+
+        !!!!!!!!!!! I STOPPED HERE!!!!!!!!!!!
         '''
         :param username: the name of this chat user
         :param partner_name: the name of the user you are chatting with
@@ -87,6 +111,7 @@ class View:
         #You can get help on this function, as with other turtle functions,
         #by typing
         #
+        
         #   import turtle
         #   help(turtle.setup)
         #
