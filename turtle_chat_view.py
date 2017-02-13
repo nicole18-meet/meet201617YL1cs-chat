@@ -94,18 +94,22 @@ class View:
     def __init__(self,username='Me',partner_name='Partner'):
         self.username=username
         self.partner_name=partner_name
-        self.my_client=Client(
+        self.my_client=Client()
 
-        !!!!!!!!!!! I STOPPED HERE!!!!!!!!!!!
+        
         '''
         :param username: the name of this chat user
         :param partner_name: the name of the user you are chatting with
         '''
+
+        
+
         ###
         #Store the username and partner_name into the instance.
         ###
 
         #Make a new client object and store it in this instance.
+        turtle.setup(width=300,height=300,startx=0,starty=0)
 
         #Set screen dimensions using turtle.setup
         #You can get help on this function, as with other turtle functions,
@@ -123,12 +127,14 @@ class View:
         #or at the end of the list using
         #   self.msg_queue.append(a_msg_string)
         self.msg_queue=[]
+        
 
         ###
         #Create one turtle object for each message to display.
         #You can use the clear() and write() methods to erase
         #and write messages for each
         ###
+        self.turtles=[turtle.clone(),turtle.clone(),turtle.clone(),turtle.clone()]
 
         ###
         #Create a TextBox instance and a SendButton instance and
