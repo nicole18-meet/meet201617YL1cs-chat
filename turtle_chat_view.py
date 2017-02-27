@@ -75,7 +75,7 @@ t1=TextBox()
 #####################################################################################
 #####################################################################################
 class SendButton(Button):
-    def __init__(self,view,my_turtle=None,shape=None,pos=(0,0)):
+    def __init__(self,view,my_turtle=None,shape=None,pos=(15,-100)):
         super(SendButton,self).__init__(my_turtle,shape,pos)
         self.view=view
     def fun(self,x=None,y=None):
@@ -146,6 +146,8 @@ class View:
         #Create a TextBox instance and a SendButton instance and
         #Store them inside of this instance
         ###
+        turtle.Screen().bgpic('hey.gif')
+      #  turtle.Screen().bgpic('index.gif')
         self.myText=TextBox()
         self.mysend=SendButton(self)
 
